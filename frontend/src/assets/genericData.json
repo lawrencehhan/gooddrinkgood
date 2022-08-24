@@ -1,0 +1,16 @@
+{
+    "data": {
+        "drinks": [
+            {
+                "name": "DrinkName",
+                "type": "Whiskey",
+                "brand": "Suntory"
+            },
+            {
+                "name": "DrinkName2",
+                "type": "Tequila",
+                "brand": "Suntory"
+            }
+        ]
+    }
+}

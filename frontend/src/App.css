@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+body #root {
+  width: 100vw;
+  position: relative;
+}
+body .app .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  z-index: 100;
+  border: solid 1px black;
+  height: 60px;
+}
+body .app .navbar-title {
+  margin-left: 18px;
+  font-size: 24px;
+}
+body .app .navbar .burger-svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  right: 18px;
+  align-self: center;
+  z-index: 1005;
+}
+
+/*# sourceMappingURL=App.css.map */
