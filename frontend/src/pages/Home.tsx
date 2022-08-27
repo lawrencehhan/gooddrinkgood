@@ -46,7 +46,11 @@ export default function Home(props: Home) {
             >
                 Your go-to place to research and review your drinks.
             </motion.h1>
-            <motion.div className='home-functions'>
+            <motion.div className='home-functions'
+                initial='hidden'
+                animate='visible'
+                variants={fade_variants}
+            >
                 <TextField 
                     className='home-functions--search'
                     label='Search'

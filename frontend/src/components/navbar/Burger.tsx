@@ -32,7 +32,7 @@ export default function Burger(props: Burger) {
         },
         openBurger: {
             rotate: 45,
-            y: 0.73
+            y: 1
         }
     }
     const burgerCenter = {
@@ -50,7 +50,7 @@ export default function Burger(props: Burger) {
         },
         openBurger: {
             rotate: -45,
-            y: -0.73
+            y: -1
         }
     }
     const transition = {
