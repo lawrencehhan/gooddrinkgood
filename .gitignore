@@ -1,2 +1,4 @@
 /flaskapp/venv
 /flaskapp/backend/.env
+/flaskapp/backend/__pycache__
+*/.DS_Store

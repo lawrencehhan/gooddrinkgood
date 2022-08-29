@@ -11,25 +11,84 @@ interface Search {
   filterOp: boolean;
 }
 interface Drink {
-  // update later with accurate data schema
-  name: string;
-  type: string;
+  drinkid: number;
+  id: string;
+  category1: string;
+  category2?: string;
+  category3?: string;
+  category4?: string;
+  category5?: string;
+  country: string;
+  drink_name: string;
+  parent1: string;
+  parent2?: string;
+  parent3?: string;
   brand: string;
+  keywords: string;
+  description_long: string;
+  description_short: string;
+  image_key: string;
+  image_url?: string;
+  isindie: string;
+  iscelebrity: boolean;
 }
 
-
 export default function App() {
+  const [connected, setConnected] = useState<boolean>(false)
+  const [drinkData, setDrinkData] = useState<Drink[]>([
+    {
+      drinkid: 0,
+      id: "",
+      category1: "",
+      category2: "",
+      category3: "",
+      category4: "",
+      category5: "",
+      country: "",
+      drink_name: "",
+      parent1: "",
+      parent2: "",
+      parent3: "",
+      brand: "",
+      keywords: "",
+      description_long: "",
+      description_short: "",
+      image_key: "",
+      image_url: "",
+      isindie: "",
+      iscelebrity: false
+    }
+  ])
+
   // Drink Data Allocation
-  // useEffect(() => {
-  //   // for grabbing drink database in future
-  // }, [])
-  const drinkData = genericData.data.drinks
+  useEffect(() => {
+    fetch("/status").then(
+      (response) => response.json()
+      .then((json) => {
+        setConnected(true)
+        fetch("/drinks").then(
+          (response) => response.json()
+          .then((json) => {
+            setDrinkData(prevData => json)
+          })
+          .catch((err) => setConnected(false))
+        );
+    })
+      .catch((err) => {
+        console.log(err)
+      })
+    );
+  }, [])
+
   const drinkCardElements = drinkData.map((drink:Drink) => {
     return (
       <DrinkCard 
-        name={drink.name}
-        type={drink.type}
-        brand={drink.brand}
+        key = {drink.id}
+        drink_name = {drink.drink_name}
+        image_url = {drink.image_url}
+        category1 = {drink.category1}
+        brand = {drink.brand}
+        description_short = {drink.description_short}
       />
     )
   })

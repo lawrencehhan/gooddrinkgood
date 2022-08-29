@@ -14,3 +14,6 @@ client = MongoClient(MONGODB_URI)
 
 # CLI for mongoimport
 # mongoimport --uri mongodb+srv://gdglrlr:<PASSWORD>@cluster0.2iu42zj.mongodb.net/good_drink_good --collection liquors --type csv --file GDG_TestData.csv --headerline
+
+# Replacing csv
+# mongoimport --uri mongodb+srv://gdglrlr:<PASSWORD>@cluster0.2iu42zj.mongodb.net/good_drink_good --collection liquors --type csv --file GDG_TestData.csv --headerline --drop

@@ -1,7 +1,11 @@
+import json
 from flask import Flask, jsonify, request
 from flask_wtf.csrf import CSRFProtect
 from structlog import get_logger
 from uuid import uuid4
+
+from backend.s3_access import get_aws_image
+from backend.basic_operations import get_all_liquors
 
 csrf = CSRFProtect()
 log = get_logger(__name__)
@@ -14,6 +18,12 @@ def status():
     if (request.method == "GET"):
         log.info("Flask API accessed")
         return jsonify({"status": "online"})
+
+@application.route("/drinks", methods=["GET"])
+def drinks():
+    if (request.method == "GET"):
+        collection_liquors = get_all_liquors()
+        return jsonify(collection_liquors)
 
 if __name__ == "__main__":
     application.run(debug=True)
