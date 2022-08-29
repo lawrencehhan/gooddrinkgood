@@ -3,14 +3,30 @@ import { motion, useAnimation } from 'framer-motion';
 import './DrinkCard.css'
 import { useInView } from 'react-intersection-observer';
 interface Drink {
-    // update later with accurate data schema
-    name: string;
-    type: string;
+    drinkid?: number;
+    id?: string;
+    category1: string;
+    category2?: string;
+    category3?: string;
+    category4?: string;
+    category5?: string;
+    country?: string;
+    drink_name: string;
+    parent1?: string;
+    parent2?: string;
+    parent3?: string;
     brand: string;
-}
+    keywords?: string;
+    description_long?: string;
+    description_short?: string;
+    image_key?: string;
+    image_url?: string;
+    isindie?: string;
+    iscelebrity?: boolean;
+  }
 
 export default function DrinkCard(props: Drink) {
-    const { name, type, brand } = props;
+    const { drink_name, image_url, category1, brand, description_short } = props;
 
     const controls = useAnimation();
     const { ref, inView } = useInView();
@@ -38,18 +54,18 @@ export default function DrinkCard(props: Drink) {
     
     return (
         <motion.div className='drinkCard'
-        key={name}
+        key={drink_name}
         ref={ref}
         initial='hidden'
         animate={controls}
         variants={cardVariants}
         >
-            Generic Card
+            <img src={image_url} className="drinkCard-image" />
             <h2>
-                {name}
+                {drink_name}
             </h2>
             <p>
-                {type}
+                {category1}
             </p>
             <p>
                 {brand}

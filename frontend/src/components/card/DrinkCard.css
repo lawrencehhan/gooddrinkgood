@@ -4,5 +4,8 @@
   padding: 20px;
   margin: 12px;
 }
+.drinkCard-image {
+  max-width: 100%;
+}
 
 /*# sourceMappingURL=DrinkCard.css.map */
