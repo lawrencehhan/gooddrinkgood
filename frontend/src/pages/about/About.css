@@ -1,0 +1,31 @@
+.about {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.about article {
+  width: 50vw;
+}
+.about-header {
+  margin-bottom: 24px;
+}
+.about-body {
+  line-height: 24px;
+}
+
+@media only screen and (min-width: 0rem) and (max-width: 42rem) {
+  .about {
+    padding: 1.5rem;
+  }
+  .about article {
+    width: 100vw;
+  }
+  .about-body {
+    margin-bottom: 5vh;
+  }
+}
+
+/*# sourceMappingURL=About.css.map */

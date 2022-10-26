@@ -1,0 +1,49 @@
+.home {
+  margin-bottom: 60px;
+  height: 100vh;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.home-title {
+  font-weight: lighter;
+  width: 100vw;
+  justify-content: center;
+  text-align: center;
+}
+.home-functions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.home-functions--search {
+  width: 40vw;
+}
+.home-warning {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 50%;
+  width: 80vw;
+}
+
+@media only screen and (min-width: 0rem) and (max-width: 42rem) {
+  .home {
+    padding: 20px;
+  }
+  .home-title {
+    font-size: 32px;
+    text-align: start;
+  }
+  .home-functions {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .home-functions--search {
+    width: 78vw;
+  }
+}
+
+/*# sourceMappingURL=Home.css.map */

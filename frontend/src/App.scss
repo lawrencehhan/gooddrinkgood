@@ -11,7 +11,6 @@ $transparent-bg: #2a2b2a00;
 body {
   margin: 0;
   width: 100vw;
-  overflow-x: hidden;
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
   #root {
     width: 100vw;
@@ -19,30 +18,20 @@ body {
     position: relative;
   }
   .app {
-    .navbar {
-        position: relative;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        z-index: 100;
-        border: solid 1px black;
-        height: 60px;
-        &-title {
-            margin-left: 18px;
-            font-size: 24px;
-        }
-        .burger-svg {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin-top: auto;
-            margin-bottom: auto;
-            right: 18px;
-            align-self: center;
-            z-index: 1005;
-        }
-    }
+    overflow-x: hidden;
+    min-height: 100vh;
   }
+  .loading-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .loading-subtitle { 
+        margin-left: 1.5rem;
+    }
+    .svg-circle {
+        overflow: visible;
+    }
+}
 }
 
 @media only screen and (min-width: 0rem) and (max-width: 42rem) {

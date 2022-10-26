@@ -1,0 +1,38 @@
+.search {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.search-header {
+  margin-top: 84px;
+  margin-bottom: 24px;
+}
+.search-body {
+  line-height: 24px;
+}
+.search-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100vh;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 45vw;
+}
+.search-query {
+  color: #506C64;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 0rem) and (max-width: 42rem) {
+  .search-empty {
+    height: 100vh;
+    max-width: 90%;
+  }
+  .search-query {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=SearchPage.css.map */

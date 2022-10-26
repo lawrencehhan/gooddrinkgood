@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 interface Burger {
-    darkMode: boolean;
     isOpen: boolean;
     handleOpen : () => void;
 }
 export default function Burger(props: Burger) {
-    const { darkMode, isOpen, handleOpen }  = props;
+    const { isOpen, handleOpen }  = props;
 
     const svgVariants = {
         hidden: {
@@ -60,7 +59,7 @@ export default function Burger(props: Burger) {
     }
     // Burger Line Props
     const burgerProps = {
-        stroke: darkMode ? 'black' : "white",
+        stroke: isOpen ? 'white' : "black",
         strokeWidth: 2,
         vectorEffect: "non-scaling-stroke",
         initial: "closed",
