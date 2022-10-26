@@ -1,0 +1,30 @@
+.about {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    article {
+        width: 50vw;
+    }
+    &-header {
+        margin-bottom: 24px;
+    }
+    &-body {
+        line-height: 24px;
+    } 
+}
+
+
+@media only screen and (min-width: 0rem) and (max-width: 42rem) {
+    .about {
+        padding: 1.5rem;
+        article { 
+            width: 100vw;
+        }
+        &-body {
+            margin-bottom: 5vh;
+        } 
+    }
+}

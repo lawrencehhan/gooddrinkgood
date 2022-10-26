@@ -1,11 +1,38 @@
 .drinkCard {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   border: 1px solid black;
   padding: 20px;
-  margin: 12px;
 }
 .drinkCard-image {
   max-width: 100%;
+}
+.drinkCard-info {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.drinkCard-entry {
+  width: 100%;
+}
+
+.drinkCard {
+  justify-self: center;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 0rem) and (max-width: 42rem) {
+  .drinkCard {
+    max-height: 40vh;
+    justify-content: center;
+  }
+  .drinkCard-image {
+    max-height: 15vh;
+  }
+  .drinkCard-title {
+    margin-top: 16px;
+  }
 }
 
 /*# sourceMappingURL=DrinkCard.css.map */

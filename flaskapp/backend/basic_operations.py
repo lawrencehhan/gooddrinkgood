@@ -39,7 +39,9 @@ def get_all_liquors():
    db = client['good_drink_good']
    collection_liquors = db['liquors']
    cursor = collection_liquors.find({})
+   pprint(cursor)
    data = cursor_to_dict(cursor)
+   print(data)
    return data
 
 # Converts a boto3 cursor to a [dicts] for json conversion

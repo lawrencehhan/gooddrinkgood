@@ -2,18 +2,21 @@ import React from 'react';
 import './Home.css';
 import { motion } from 'framer-motion';
 import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 interface Search {
     searchText: string;
-    filterOp: boolean;
+    filterOp?: boolean;
 }
 interface Home {
-    darkMode: boolean;
-    search: Search
+    search: Search;
+    formWarning: boolean;
     handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSubmit: (event: React.SyntheticEvent<Element, Event>) => void;
 }
 
 export default function Home(props: Home) {
-    const { darkMode, search, handleSearch } = props;
+    const { search, formWarning, handleSearch, handleSubmit } = props;
 
     const fade_variants = {
         hidden: {
@@ -46,10 +49,11 @@ export default function Home(props: Home) {
             >
                 Your go-to place to research and review your drinks.
             </motion.h1>
-            <motion.div className='home-functions'
+            <motion.form className='home-functions'
                 initial='hidden'
                 animate='visible'
                 variants={fade_variants}
+                onSubmit={handleSubmit}
             >
                 <TextField 
                     className='home-functions--search'
@@ -59,7 +63,16 @@ export default function Home(props: Home) {
                     value={search.searchText}
                     onChange={handleSearch}
                 />
-            </motion.div>
+                <IconButton
+                    onClick={handleSubmit}
+                >
+                    <SearchIcon />
+                </IconButton>
+            </motion.form>
+            <div>
+                {search.searchText}
+            </div>
+            {formWarning && <div className="home-warning">Please make sure to enter a search</div>}
         </motion.div>
     )
 }

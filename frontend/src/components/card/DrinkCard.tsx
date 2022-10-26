@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import './DrinkCard.css'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import { Navigate } from 'react-router-dom';
 interface Drink {
     drinkid?: number;
     id?: string;
@@ -24,9 +30,14 @@ interface Drink {
     isindie?: string;
     iscelebrity?: boolean;
   }
+interface DrinkCard {
+    drink: Drink;
+    format: string;
+    handleSelection: (drink:Drink) => void;
+}
 
-export default function DrinkCard(props: Drink) {
-    const { drink_name, image_url, category1, brand, description_short } = props;
+export default function DrinkCard(props: DrinkCard) {
+    const { drink, format, handleSelection } = props;
 
     const controls = useAnimation();
     const { ref, inView } = useInView();
@@ -53,23 +64,45 @@ export default function DrinkCard(props: Drink) {
     }
     
     return (
-        <motion.div className='drinkCard'
-        key={drink_name}
+        <motion.div className={`drinkCard`}
+        key={drink.drink_name}
         ref={ref}
         initial='hidden'
         animate={controls}
         variants={cardVariants}
+        onClick={() => handleSelection(drink)}
         >
-            <img src={image_url} className="drinkCard-image" />
-            <h2>
-                {drink_name}
-            </h2>
-            <p>
-                {category1}
-            </p>
-            <p>
-                {brand}
-            </p>
+            <img src={drink.image_url} className="drinkCard-image" />
+            <div className="drinkCard-info">
+                <h2 className="drinkCard-entry drinkCard-title">
+                    {drink.drink_name}
+                </h2>
+                <p className="drinkCard-entry">
+                    {drink.category1}
+                </p>
+                <p className="drinkCard-entry">
+                    {drink.brand}
+                </p>
+            </div>
         </motion.div>
+        // <Card className="drinkCard" >
+        //     <CardActionArea>
+        //         <CardMedia
+        //             component="img"
+        //             height="140"
+        //             image={drink.image_url}
+        //             alt={drink.drink_name}
+        //             title={drink.drink_name}
+        //         />
+        //         <CardContent>
+        //             <Typography gutterBottom variant="h5" component="div">
+        //                 {drink.drink_name}
+        //             </Typography>
+        //             <Typography variant="body2" color="text.secondary">
+        //                 {drink.description_short}
+        //             </Typography>
+        //         </CardContent>
+        //     </CardActionArea>
+        // </Card>
     )
 }
