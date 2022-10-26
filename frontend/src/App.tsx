@@ -123,13 +123,13 @@ export default function App() {
         fetch("/drinks").then(
           (response) => response.json()
           .then((json) => {
-            setDrinkData(prevData => json)
             const normalizedData = json.map((item:Drink) => {
               return {
                 ...item,
                 drink_name: item.drink_name.replace(/[_./']/g,'').replace(' ', '-').toLowerCase()
               }
             })
+            setDrinkData(normalizedData)
             setDrinkDataFiltered(normalizedData)
           })
           .catch((err) => setConnected(false))
@@ -214,6 +214,7 @@ export default function App() {
       searchText: "",
       queryFound: false
     }))
+    setDrinkDataFiltered(drinkData)
   }
   console.log(drinkDataFiltered)
   console.log(search)

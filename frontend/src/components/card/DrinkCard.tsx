@@ -49,8 +49,8 @@ export default function DrinkCard(props: DrinkCard) {
     const cardVariants = {
         hidden: {
             opacity: 0,
-            x: -10,
-            y: -10,
+            x: 0,
+            y: 15,
         },
         visible: {
             opacity: 1,
