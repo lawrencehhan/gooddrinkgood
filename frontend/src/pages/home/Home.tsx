@@ -69,9 +69,6 @@ export default function Home(props: Home) {
                     <SearchIcon />
                 </IconButton>
             </motion.form>
-            <div>
-                {search.searchText}
-            </div>
             {formWarning && <div className="home-warning">Please make sure to enter a search</div>}
         </motion.div>
     )

@@ -9,6 +9,8 @@
         margin-bottom: 24px;
     }
     &-body {
+        // width: 80vw;
+        width: 90vw;
         line-height: 24px;
     }
     &-empty {
@@ -29,6 +31,9 @@
 
 @media only screen and (min-width: 0rem) and (max-width: 42rem) {
     .search {
+        // &-body {
+        //     width: 100vw;
+        // }
         &-empty {
             height: 100vh;
             max-width: 90%;
