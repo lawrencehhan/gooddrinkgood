@@ -35,7 +35,7 @@ interface Drink {
   description_short?: string;
   image_key?: string;
   image_url?: string;
-  isindie?: string;
+  isindie?: boolean;
   iscelebrity?: boolean;
 }
 
@@ -61,7 +61,7 @@ export default function App() {
       description_short: "",
       image_key: "",
       image_url: "",
-      isindie: "",
+      isindie: false,
       iscelebrity: false
     }
   ])
@@ -85,7 +85,7 @@ export default function App() {
       description_short: "",
       image_key: "",
       image_url: "",
-      isindie: "",
+      isindie: false,
       iscelebrity: false
     }
   ])
@@ -109,7 +109,7 @@ export default function App() {
       description_short: "",
       image_key: "",
       image_url: "",
-      isindie: "",
+      isindie: false,
       iscelebrity: false
     }
   )

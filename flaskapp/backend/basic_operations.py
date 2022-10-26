@@ -66,8 +66,8 @@ def cursor_to_dict(cursor):
          'description_long': obj['description_long'],
          'description_short': obj['description_short'],
          'image_key': obj['image_key'],
-         'isindie': obj['isindie'],
-         'iscelebrity': obj['iscelebrity'],
+         'isindie': obj['isindie']=="TRUE",
+         'iscelebrity': obj['iscelebrity']=="TRUE",
          'image_url': get_aws_image(obj['image_key'])
       }
       data.append(dataDict)

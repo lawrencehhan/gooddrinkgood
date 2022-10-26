@@ -27,7 +27,7 @@ interface Drink {
     description_short?: string;
     image_key?: string;
     image_url?: string;
-    isindie?: string;
+    isindie?: boolean;
     iscelebrity?: boolean;
   }
 interface DrinkCard {
